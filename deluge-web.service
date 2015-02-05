@@ -1,0 +1,2 @@
+#!/bin/sh
+exec sudo -u deluge deluge-web
