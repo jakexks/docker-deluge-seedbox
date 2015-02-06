@@ -17,7 +17,7 @@ if [ ! -f /home/deluge/.htpasswd ]; then
 fi
 if [ ! -f /home/deluge/complete/_h5ai/.htaccess ]; then
     echo "installing h5ai"
-    wget -O /home/deluge/complete/h5ai.zip http://release.larsjung.de/h5ai/h5ai-0.26.1.zip && unzip -d -qq /home/deluge/complete/ /home/deluge/complete/h5ai.zip
+    wget -O /home/deluge/complete/h5ai.zip http://release.larsjung.de/h5ai/h5ai-0.26.1.zip && unzip -qq -d /home/deluge/complete/ /home/deluge/complete/h5ai.zip
     rm -f /home/deluge/complete/h5ai.zip && chown -R deluge:deluge /home/deluge/complete && chmod -R a+w /home/deluge/complete/_h5ai
 fi
 exec sudo -u deluge deluged -d
