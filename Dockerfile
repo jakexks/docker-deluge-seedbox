@@ -2,7 +2,7 @@ FROM debian:jessie
 MAINTAINER Jake <i@am.so-aweso.me>
 
 # Install components
-RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y install sudo deluged deluge-web deluge-console runit psmisc nginx php5-fpm unzip wget php5-gd libav-tools zip imagemagick apache2-utils && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get --no-install-recommends -qyy install sudo deluged deluge-web deluge-console runit psmisc nginx php5-fpm unzip wget php5-gd libav-tools zip imagemagick apache2-utils && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN useradd -m -s /bin/nologin deluge
 RUN sudo -u deluge sh -c "deluged; sleep 5; killall deluged"
 RUN sudo -u deluge sh -c "echo \"deluge:deluge:10\" >> ~/.config/deluge/auth"
