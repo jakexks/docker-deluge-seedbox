@@ -10,9 +10,7 @@ Your downloads directory is also served over http on port 80.
 
 The default username/password is deluge:deluge. I recommend changing this by editing the .config/deluge/auth file in your deluge data directory.
 
-```bash
-docker exec deluge sh -c "sudo -u deluge sh -c \"sed '/deluge/d' /home/deluge/.config/deluge/auth && echo \"user:pass:10\" >> /home/deluge/.config/deluge/auth"
-```
+```docker exec deluge sh -c "sudo -u deluge sh -c \"sed '/deluge/d' /home/deluge/.config/deluge/auth && echo \"user:pass:10\" >> /home/deluge/.config/deluge/auth"```
 
 You should also change the .htpasswd file in your docker data directory to secure your downloads folder.
 
